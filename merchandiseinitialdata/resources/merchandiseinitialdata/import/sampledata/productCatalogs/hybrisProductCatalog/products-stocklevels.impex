@@ -1,0 +1,35 @@
+# ImpEx for Importing Products Stock Levels and Warehouses into Merchandise
+  
+# Macros / Replacement Parameter definitions
+$productCatalog=hybrisProductCatalog
+  
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+  
+  
+INSERT_UPDATE Vendor;code[unique=true]
+;hybris;
+  
+INSERT_UPDATE Warehouse;code[unique=true];vendor(code);default[default=true]
+;warehouse_c;hybris;
+ 
+
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=true];reserved
+;100;warehouse_c;forceInStock;0;-1;0;0;1000006;0
+;100;warehouse_c;forceInStock;0;-1;0;0;1000010;0
+;100;warehouse_c;forceInStock;0;-1;0;0;1000013;0
+;100;warehouse_c;forceInStock;0;-1;0;0;1000011;0
+;100;warehouse_c;forceInStock;0;-1;0;0;1000020;0
+;100;warehouse_c;forceInStock;0;-1;0;0;1000021;0
+;100;warehouse_c;forceInStock;0;-1;0;0;0200;0
+;100;warehouse_c;notSpecified;0;-1;0;0;0111;0
+
+UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehouse(code));vendors(code)
+;1000006;;1000006:warehouse_c;hybris
+;1000010;;1000010:warehouse_c;hybris
+;1000013;;1000013:warehouse_c;hybris
+;1000011;;1000011:warehouse_c;hybris
+;1000020;;1000020:warehouse_c;hybris
+;1000021;;1000021:warehouse_c;hybris
+;0200;;0200:warehouse_c;hybris
+;0111;;0111:warehouse_c;hybris

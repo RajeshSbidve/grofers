@@ -1,0 +1,252 @@
+# ImpEx for Importing Prices into Merchandise Store  
+"#% impex.setLocale( Locale.GERMAN )"
+   
+# Macros / Replacement Parameter definitions
+$productCatalog=hybrisProductCatalog
+    
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+    
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+   
+UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;
+ ;0001;5,00 GBP, 5,50 EUR, 7,48 USD, 765,33 JPY
+ ;0002;2,50 GBP, 2,75 EUR, 3,74 USD, 382,66 JPY
+ ;0003;5,00 GBP, 5,50 EUR, 7,48 USD, 765,33 JPY
+ ;0004;10,00 GBP, 11,00 EUR, 14,96 USD, 1530,65 JPY
+ ;0005;8,00 GBP, 10,00 EUR, 13,6 USD, 1391,50 JPY
+ ;0006;18,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0007;12,00 GBP, 15,00 EUR, 20,40 USD, 2087,25 JPY
+ ;0100;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0101;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0102;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0110;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0111;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0112;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0200;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ ;0201;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ ;0202;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ ;0210;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ ;0211;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ ;0212;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ 
+ 
+ 
+
+# UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;Europe1PriceFactory_PTG(code)
+UPDATE Product;code[unique=true];$approved;$catalogVersion;$taxGroup
+;0001
+;0002
+;0003
+;0004
+;0111
+;0200
+;0202
+;1000000
+;1000001
+;1000002
+;1000003
+;1000004
+;1000005
+;1000006
+;1000007
+;1000008
+;1000009
+;1000010
+;1000011
+;1000012
+;1000013
+;1000014
+;1000015
+;1000016
+;1000017
+;1000018
+;1000019
+;1000020
+;1000021
+;1000022
+;1000023
+;1000024
+;1000025
+;1000026
+;1000027
+;1000028
+;1000029
+;1000030
+;1000031
+;1000032
+;1000033
+;1000034
+;1000035
+;1000036
+;1000037
+;1000038
+;1000039
+;1000040
+;1000041
+;1000042
+;1000043
+;1000044
+;1000045
+;1000046
+;1000047
+;1000048
+;1000049
+;1000050
+;1000051
+;1000052
+;1000053
+;1000054
+;1000055
+;1000056
+;1000057
+;1000058
+;1000059
+;1000060
+;1000061
+;1000062
+;1000063
+
+ 
+INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+;0001;pieces;INR;89;1;1;false
+;0001;pieces;USD;1.78;1;1;false
+;0002;pieces;INR;89;1;1;false
+;0002;pieces;USD;1.78;1;1;false
+;0003;pieces;INR;421;1;1;false
+;0003;pieces;USD;8.42;1;1;false
+;0004;pieces;INR;89;1;1;false
+;0004;pieces;USD;1.78;1;1;false
+;0111;pieces;INR;37;1;1;false
+;0111;pieces;USD;0.74;1;1;false
+;0200;pieces;INR;109;1;1;false
+;0200;pieces;USD;2.18;1;1;false
+;0202;pieces;INR;99;1;1;false
+;0202;pieces;USD;1.98;1;1;false
+;1000000;pieces;INR;81;1;1;false
+;1000000;pieces;USD;1.62;1;1;false
+;1000001;pieces;INR;306;1;1;false
+;1000001;pieces;USD;6.12;1;1;false
+;1000002;pieces;INR;567;1;1;false
+;1000002;pieces;USD;11.34;1;1;false
+#;1000003;pieces;INR;487;1;1;false
+#;1000003;pieces;USD;9.74;1;1;false
+;1000004;pieces;INR;28;1;1;false
+;1000004;pieces;USD;0.56;1;1;false
+;1000005;pieces;INR;85;1;1;false
+;1000005;pieces;USD;1.7;1;1;false
+;1000006;pieces;INR;19;1;1;false
+;1000006;pieces;USD;0.38;1;1;false
+;1000007;pieces;INR;99;1;1;false
+;1000007;pieces;USD;1.98;1;1;false
+;1000008;pieces;INR;129;1;1;false
+;1000008;pieces;USD;2.58;1;1;false
+;1000009;pieces;INR;109;1;1;false
+;1000009;pieces;USD;2.18;1;1;false
+;1000010;pieces;INR;49;1;1;false
+;1000010;pieces;USD;0.98;1;1;false
+;1000011;pieces;INR;49;1;1;false
+;1000011;pieces;USD;0.98;1;1;false
+;1000012;pieces;INR;243;1;1;false
+;1000012;pieces;USD;4.86;1;1;false
+;1000013;pieces;INR;66;1;1;false
+;1000013;pieces;USD;1.32;1;1;false
+;1000014;pieces;INR;150;1;1;false
+;1000014;pieces;USD;3;1;1;false
+;1000015;pieces;INR;35;1;1;false
+;1000015;pieces;USD;0.7;1;1;false
+;1000016;pieces;INR;400;1;1;false
+;1000016;pieces;USD;8;1;1;false
+;1000017;pieces;INR;138;1;1;false
+;1000017;pieces;USD;2.76;1;1;false
+;1000018;pieces;INR;75;1;1;false
+;1000018;pieces;USD;1.5;1;1;false
+;1000019;pieces;INR;139;1;1;false
+;1000019;pieces;USD;2.78;1;1;false
+;1000020;pieces;INR;29;1;1;false
+;1000020;pieces;USD;0.58;1;1;false
+;1000021;pieces;INR;96;1;1;false
+;1000021;pieces;USD;1.92;1;1;false
+;1000022;pieces;INR;19;1;1;false
+;1000022;pieces;USD;0.38;1;1;false
+;1000023;pieces;INR;261;1;1;false
+;1000023;pieces;USD;4.00;1;1;false
+;1000024;pieces;INR;241;1;1;false
+;1000024;pieces;USD;3.70;1;1;false
+;1000025;pieces;INR;56;1;1;false
+;1000025;pieces;USD;0.86;1;1;false
+;1000026;pieces;INR;416;1;1;false
+;1000026;pieces;USD;6.38;1;1;false
+;1000027;pieces;INR;68;1;1;false
+;1000027;pieces;USD;1.04;1;1;false
+;1000028;pieces;INR;63;1;1;false
+;1000028;pieces;USD;0.97;1;1;false
+;1000029;pieces;INR;117;1;1;false
+;1000029;pieces;USD;1.79;1;1;false
+;1000030;pieces;INR;309;1;1;false
+;1000030;pieces;USD;4.74;1;1;false
+;1000031;pieces;INR;155;1;1;false
+;1000031;pieces;USD;2.38;1;1;false
+;1000032;pieces;INR;36;1;1;false
+;1000032;pieces;USD;0.55;1;1;false
+;1000033;pieces;INR;372;1;1;false
+;1000033;pieces;USD;5.71;1;1;false
+;1000034;pieces;INR;28;1;1;false
+;1000034;pieces;USD;0.43;1;1;false
+;1000035;pieces;INR;338;1;1;false
+;1000035;pieces;USD;5.19;1;1;false
+;1000036;pieces;INR;325;1;1;false
+;1000036;pieces;USD;4.99;1;1;false
+;1000037;pieces;INR;89;1;1;false
+;1000037;pieces;USD;1.37;1;1;false
+;1000038;pieces;INR;713;1;1;false
+;1000038;pieces;USD;10.94;1;1;false
+;1000039;pieces;INR;125;1;1;false
+;1000039;pieces;USD;1.92;1;1;false
+;1000040;pieces;INR;85;1;1;false
+;1000040;pieces;USD;1.3;1;1;false
+;1000041;pieces;INR;46;1;1;false
+;1000041;pieces;USD;0.71;1;1;false
+;1000042;pieces;INR;120;1;1;false
+;1000042;pieces;USD;1.84;1;1;false
+;1000043;pieces;INR;330;1;1;false
+;1000043;pieces;USD;5.06;1;1;false
+;1000044;pieces;INR;12;1;1;false
+;1000044;pieces;USD;0.18;1;1;false
+;1000045;pieces;INR;35;1;1;false
+;1000045;pieces;USD;0.54;1;1;false
+;1000046;pieces;INR;73;1;1;false
+;1000046;pieces;USD;1.12;1;1;false
+;1000047;pieces;INR;216;1;1;false
+;1000047;pieces;USD;3.31;1;1;false
+;1000048;pieces;INR;47;1;1;false
+;1000048;pieces;USD;0.72;1;1;false
+;1000049;pieces;INR;140;1;1;false
+;1000049;pieces;USD;2.15;1;1;false
+;1000050;pieces;INR;210;1;1;false
+;1000050;pieces;USD;3.22;1;1;false
+;1000051;pieces;INR;99;1;1;false
+;1000051;pieces;USD;1.52;1;1;false
+;1000052;pieces;INR;489;1;1;false
+;1000052;pieces;USD;7.5;1;1;false
+;1000053;pieces;INR;651;1;1;false
+;1000053;pieces;USD;9.99;1;1;false
+;1000054;pieces;INR;651;1;1;false
+;1000054;pieces;USD;9.99;1;1;false
+;1000055;pieces;INR;43;1;1;false
+;1000055;pieces;USD;0.66;1;1;false
+;1000056;pieces;INR;38;1;1;false
+;1000056;pieces;USD;0.58;1;1;false
+;1000059;pieces;INR;10;1;1;false
+;1000059;pieces;USD;0.15;1;1;false
+;1000060;pieces;INR;170;1;1;false
+;1000060;pieces;USD;2.61;1;1;false
+;1000061;pieces;INR;214;1;1;false
+;1000061;pieces;USD;3.28;1;1;false
+;1000062;pieces;INR;46;1;1;false
+;1000062;pieces;USD;0.71;1;1;false
+;1000063;pieces;INR;114;1;1;false
+;1000063;pieces;USD;1.75;1;1;false
+
+ 
