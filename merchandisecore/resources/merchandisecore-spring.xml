@@ -467,5 +467,5 @@
     class="de.hybris.merchandise.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider">
     <property name="pointOfServiceService" ref="pointOfServiceService" />
 </bean>
-	
+	<!-- -->
 </beans>
