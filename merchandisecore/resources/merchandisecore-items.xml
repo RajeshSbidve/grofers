@@ -143,6 +143,8 @@
     <itemtype code="CancelOrderAction"
         jaloclass="de.hybris.merchandise.core.jalo.actions.CancelOrderAction"
         extends="SimpleCMSAction" autocreate="true" generate="true">
+		<description>Defines if the customer is a hybris internal employee. Aggregated information</description>
+                        
     </itemtype>
 </typegroup>
 
